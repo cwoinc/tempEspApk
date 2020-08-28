@@ -26,8 +26,8 @@ android {
         config {
             keyAlias 'test456'
             storeFile file('/home/king/diy/script/key/20200827_esp_apk.jks')
-            storePassword 'Wantdo.123456'
-            keyPassword 'Wantdo.123'
+            storePassword 'Wantdo.123'
+            keyPassword 'Wantdo.123456'
         }
     }
 
@@ -43,6 +43,7 @@ android {
             buildConfigField "boolean", "isQrCodeSupported", "true"
             buildConfigField "boolean", "isSettingsAllowed", "true"
             buildConfigField "boolean", "isFilteringByPrefixAllowed", "true"
+            signingConfig signingConfigs.config
         }
 
         debug {
@@ -54,6 +55,7 @@ android {
             buildConfigField "boolean", "isQrCodeSupported", "true"
             buildConfigField "boolean", "isSettingsAllowed", "true"
             buildConfigField "boolean", "isFilteringByPrefixAllowed", "true"
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -72,6 +74,7 @@ dependencies {
     implementation 'com.wang.avi:library:2.1.3'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.budiyev.android:code-scanner:2.1.0'
+    implementation files('../libs/login-with-amazon-sdk.jar')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
